@@ -1,5 +1,16 @@
 title: Manuel Scionti
-#logo:
 description: my portfolio
-show_downloads: true
 theme: jekyll-theme-minimal
+show_downloads: true
+
+# Optional settings
+url: "https://mnlscn.github.io"
+baseurl: ""
+
+# Uncomment to add a logo
+# logo: /assets/images/logo.png
+
+# Optional plugins
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
