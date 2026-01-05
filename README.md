@@ -1,6 +1,6 @@
 # Manuel Scionti - Portfolio
 
-Personal portfolio built with Hugo featuring a code/terminal aesthetic..
+Personal portfolio built with Hugo featuring a code/terminal aesthetic.
 
 ## 📁 Structure
 
