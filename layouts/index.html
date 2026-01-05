@@ -1,0 +1,312 @@
+{{ define "main" }}
+<!-- Hero Section -->
+<section class="hero">
+    <div class="code-block">
+        <div class="code-header">
+            <div class="code-dots">
+                <span class="code-dot red"></span>
+                <span class="code-dot yellow"></span>
+                <span class="code-dot green"></span>
+            </div>
+            <span class="code-filename">~/manuel/introduction.py</span>
+            <div class="code-actions">
+                <span>utf-8</span>
+                <span>Python</span>
+            </div>
+        </div>
+        <div class="code-body">
+            <div class="line">
+                <span class="line-number">1</span>
+                <span class="line-content"><span class="keyword">class</span> <span class="class-name">ManuelScionti</span>:</span>
+            </div>
+            <div class="line">
+                <span class="line-number">2</span>
+                <span class="line-content">    <span class="string">"""AI Engineer based in Barcelona"""</span></span>
+            </div>
+            <div class="line">
+                <span class="line-number">3</span>
+                <span class="line-content"></span>
+            </div>
+            <div class="line">
+                <span class="line-number">4</span>
+                <span class="line-content">    <span class="property">role</span> <span class="operator">=</span> <span class="string">"AI Engineer"</span></span>
+            </div>
+            <div class="line">
+                <span class="line-number">5</span>
+                <span class="line-content">    <span class="property">company</span> <span class="operator">=</span> <span class="string">"ADP"</span></span>
+            </div>
+            <div class="line">
+                <span class="line-number">6</span>
+                <span class="line-content">    <span class="property">focus</span> <span class="operator">=</span> [<span class="string">"LLMs"</span>, <span class="string">"GenAI"</span>, <span class="string">"ML Engineering"</span>]</span>
+            </div>
+            <div class="line">
+                <span class="line-number">7</span>
+                <span class="line-content"></span>
+            </div>
+            <div class="line">
+                <span class="line-number">8</span>
+                <span class="line-content">    <span class="keyword">def</span> <span class="function">__init__</span>(<span class="variable">self</span>):</span>
+            </div>
+            <div class="line">
+                <span class="line-number">9</span>
+                <span class="line-content">        <span class="variable">self</span>.<span class="property">status</span> <span class="operator">=</span> <span class="string">"building intelligent systems"</span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="hero-output">
+        <div class="output-label">model.generate(prompt="introduce yourself")</div>
+        <div class="token-stream" id="token-stream">
+            <span class="cursor-blink"></span>
+        </div>
+    </div>
+
+    <div class="hero-meta">
+        <div class="meta-item">
+            <span>tokens:</span>
+            <span class="meta-value" id="token-count">0</span>
+        </div>
+        <div class="meta-item">
+            <span>latency:</span>
+            <span class="meta-value">~24ms</span>
+        </div>
+        <div class="meta-item">
+            <span>model:</span>
+            <span class="meta-value">manuel-v1.0</span>
+        </div>
+    </div>
+
+    <div class="scroll-hint">
+        <span>scroll to explore</span>
+        <span>↓</span>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about">
+    <div class="section-comment">who I am and what I do</div>
+    <h2 class="section-title"><span class="bracket">{</span> about <span class="bracket">}</span></h2>
+
+    <div class="about-prose">
+        <p>
+            I'm an <span class="highlight">AI Engineer</span> based in Barcelona, originally from Italy. 
+            I specialize in <span class="highlight">Large Language Models</span> and <span class="highlight">Generative AI</span>, 
+            building systems that turn cutting-edge research into real-world applications.
+        </p>
+        <p>
+            Currently at <span class="highlight">ADP</span>, where I design and deploy AI solutions at enterprise scale. 
+            Before that, I earned my Master's degree in Data Science from the University of Catania — one of the 
+            first programs of its kind in Italy.
+        </p>
+        <p>
+            I'm passionate about the entire ML lifecycle: from prototyping and experimentation to production-grade 
+            systems that actually work. When I'm not fine-tuning models or debugging pipelines, I contribute to 
+            open-source projects like IBM's Agentics framework.
+        </p>
+    </div>
+
+    <div class="params-grid">
+        <div class="param-card">
+            <div class="param-name">llm_expertise</div>
+            <div class="param-value">LLM Development</div>
+            <div class="param-type">Fine-tuning, RAG, prompt engineering</div>
+        </div>
+        <div class="param-card">
+            <div class="param-name">ml_ops</div>
+            <div class="param-value">ML Engineering</div>
+            <div class="param-type">Pipelines, optimization, deployment</div>
+        </div>
+        <div class="param-card">
+            <div class="param-name">agent_systems</div>
+            <div class="param-value">AI Agents</div>
+            <div class="param-type">Multi-agent, tool use, autonomy</div>
+        </div>
+        <div class="param-card">
+            <div class="param-name">infrastructure</div>
+            <div class="param-value">Cloud & DevOps</div>
+            <div class="param-type">AWS, containers, scalable systems</div>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects">
+    <div class="section-comment">fetching project repositories</div>
+    <h2 class="section-title"><span class="bracket">{</span> projects <span class="bracket">}</span></h2>
+
+    <div class="api-response">
+        <div class="api-header">
+            <div class="api-endpoint">
+                <span class="api-method get">GET</span>
+                <span class="api-path">/repos/IBM/Agentics</span>
+            </div>
+            <span class="api-status">200 OK</span>
+        </div>
+        <div class="api-body">
+            <div class="project-title">IBM Agentics <span class="tag" style="margin-left: 0.5rem;">contributor</span></div>
+            <div class="project-desc">
+                Python framework for structured, scalable, and semantically grounded 
+                agentic computation. Contributing to the future of autonomous AI systems.
+            </div>
+            <div class="project-tags">
+                <span class="tag">Python</span>
+                <span class="tag">AI Agents</span>
+                <span class="tag">Multi-Agent Systems</span>
+                <span class="tag">Open Source</span>
+            </div>
+            <a href="https://github.com/IBM/Agentics" class="project-link" target="_blank">
+                → view repository
+            </a>
+        </div>
+    </div>
+
+    <div class="api-response">
+        <div class="api-header">
+            <div class="api-endpoint">
+                <span class="api-method get">GET</span>
+                <span class="api-path">/repos/mnlscn/pydantic-citation-validator</span>
+            </div>
+            <span class="api-status">200 OK</span>
+        </div>
+        <div class="api-body">
+            <div class="project-title">Pydantic Citation Validator</div>
+            <div class="project-desc">
+                Validation system using Instructor to add citations to LLM outputs 
+                and prevent hallucinations by ensuring every claim is backed by sources.
+            </div>
+            <div class="project-tags">
+                <span class="tag">Python</span>
+                <span class="tag">Pydantic</span>
+                <span class="tag">LLM Validation</span>
+                <span class="tag">Hallucination Prevention</span>
+            </div>
+            <a href="https://github.com/mnlscn/pydantic-citation-validator" class="project-link" target="_blank">
+                → view repository
+            </a>
+        </div>
+    </div>
+
+    <div class="api-response">
+        <div class="api-header">
+            <div class="api-endpoint">
+                <span class="api-method get">GET</span>
+                <span class="api-path">/repos/mnlscn/receipt-extractor</span>
+            </div>
+            <span class="api-status">200 OK</span>
+        </div>
+        <div class="api-body">
+            <div class="project-title">Receipt Extractor</div>
+            <div class="project-desc">
+                Document processing system for extracting structured data from 
+                receipts using computer vision and NLP techniques.
+            </div>
+            <div class="project-tags">
+                <span class="tag">Python</span>
+                <span class="tag">OCR</span>
+                <span class="tag">Document AI</span>
+            </div>
+            <a href="https://github.com/mnlscn/receipt-extractor" class="project-link" target="_blank">
+                → view repository
+            </a>
+        </div>
+    </div>
+
+    <div class="api-response">
+        <div class="api-header">
+            <div class="api-endpoint">
+                <span class="api-method get">GET</span>
+                <span class="api-path">/repos/mnlscn/unict-master-thesis</span>
+            </div>
+            <span class="api-status">200 OK</span>
+        </div>
+        <div class="api-body">
+            <div class="project-title">Master's Thesis <span class="tag" style="margin-left: 0.5rem;">research</span></div>
+            <div class="project-desc">
+                Research on unsupervised learning and clustering techniques with 
+                ETL pipelines on AWS for large-scale data processing.
+            </div>
+            <div class="project-tags">
+                <span class="tag">AWS</span>
+                <span class="tag">Clustering</span>
+                <span class="tag">ETL</span>
+                <span class="tag">Unsupervised Learning</span>
+            </div>
+            <a href="https://github.com/mnlscn/unict-master-thesis" class="project-link" target="_blank">
+                → view repository
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Blog Preview Section -->
+<section id="blog-preview">
+    <div class="section-comment">latest inference logs</div>
+    <h2 class="section-title"><span class="bracket">{</span> blog <span class="bracket">}</span></h2>
+
+    <div class="blog-list">
+        {{ range first 3 (where .Site.RegularPages "Section" "blog") }}
+        <a href="{{ .Permalink }}" class="log-entry">
+            <div class="log-timestamp">{{ .Date.Format "2006-01-02 15:04:05" }} UTC</div>
+            <div class="log-title">{{ .Title }}</div>
+            <div class="log-preview">{{ .Summary | truncate 150 }}</div>
+            <div class="log-status">status: published | tokens: ~{{ .Params.tokens | default "1.2k" }}</div>
+        </a>
+        {{ else }}
+        <a href="/blog/" class="log-entry">
+            <div class="log-timestamp">coming soon</div>
+            <div class="log-title">Blog posts in the works...</div>
+            <div class="log-preview">Writing about LLMs, RAG systems, AI agents, and lessons from production.</div>
+            <div class="log-status">status: drafting</div>
+        </a>
+        {{ end }}
+    </div>
+
+    <a href="/blog/" class="project-link" style="margin-top: 1.5rem; display: inline-block;">
+        → view all posts
+    </a>
+</section>
+
+<!-- Contact Section -->
+<section id="contact">
+    <div class="section-comment">initialize connection</div>
+    <h2 class="section-title"><span class="bracket">{</span> contact <span class="bracket">}</span></h2>
+
+    <div class="function-call">
+        <div class="function-header">connect.py — establishing channels</div>
+        <div class="function-body">
+            <div class="line">
+                <span class="line-number">1</span>
+                <span class="line-content"><span class="keyword">def</span> <span class="function">reach_out</span>():</span>
+            </div>
+            <div class="line">
+                <span class="line-number">2</span>
+                <span class="line-content">    <span class="comment"># Currently in {{ .Site.Params.location }}, open to remote</span></span>
+            </div>
+            <div class="line">
+                <span class="line-number">3</span>
+                <span class="line-content"></span>
+            </div>
+            <div class="line">
+                <span class="line-number">4</span>
+                <span class="line-content">    <span class="property">linkedin</span> <span class="operator">=</span> <a href="{{ .Site.Params.linkedin }}" target="_blank"><span class="string">"linkedin.com/in/manuelscionti"</span></a></span>
+            </div>
+            <div class="line">
+                <span class="line-number">5</span>
+                <span class="line-content">    <span class="property">github</span> <span class="operator">=</span> <a href="{{ .Site.Params.github }}" target="_blank"><span class="string">"github.com/mnlscn"</span></a></span>
+            </div>
+            <div class="line">
+                <span class="line-number">6</span>
+                <span class="line-content">    <span class="property">email</span> <span class="operator">=</span> <a href="mailto:{{ .Site.Params.email }}"><span class="string">"{{ .Site.Params.email }}"</span></a></span>
+            </div>
+            <div class="line">
+                <span class="line-number">7</span>
+                <span class="line-content"></span>
+            </div>
+            <div class="line">
+                <span class="line-number">8</span>
+                <span class="line-content">    <span class="keyword">return</span> <span class="string">"Looking forward to connecting"</span></span>
+            </div>
+        </div>
+    </div>
+</section>
+{{ end }}

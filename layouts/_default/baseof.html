@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+    <meta name="description" content="{{ .Site.Params.description }}">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <!-- Background elements -->
+    <div class="grid-bg"></div>
+    <canvas id="neural-bg"></canvas>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="/" class="logo">
+            <span class="logo-file">manuel-info.md</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="/#about"><span class="method">GET</span> /about</a></li>
+            <li><a href="/#projects"><span class="method">GET</span> /projects</a></li>
+            <li><a href="/blog/"><span class="method">GET</span> /blog</a></li>
+            <li><a href="/#contact"><span class="method">POST</span> /contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        {{ block "main" . }}{{ end }}
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p class="footer-text">
+            <span class="comment"># Built with curiosity and caffeine</span><br>
+            <span class="comment"># © {{ now.Year }} Manuel Scionti</span>
+        </p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/js/main.js"></script>
+</body>
+</html>

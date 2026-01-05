@@ -1,0 +1,36 @@
+baseURL = "https://mnlscn.github.io/"
+languageCode = "en-us"
+title = "Manuel Scionti | AI Engineer"
+
+[params]
+  description = "AI Engineer specializing in LLMs and Generative AI"
+  author = "Manuel Scionti"
+  github = "https://github.com/mnlscn"
+  linkedin = "https://www.linkedin.com/in/manuelscionti/"
+  email = "your.email@example.com"
+  location = "Barcelona, ES"
+
+[menu]
+  [[menu.main]]
+    name = "about"
+    url = "/#about"
+    weight = 1
+  [[menu.main]]
+    name = "projects"
+    url = "/#projects"
+    weight = 2
+  [[menu.main]]
+    name = "blog"
+    url = "/blog/"
+    weight = 3
+  [[menu.main]]
+    name = "contact"
+    url = "/#contact"
+    weight = 4
+
+[markup]
+  [markup.highlight]
+    noClasses = false
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

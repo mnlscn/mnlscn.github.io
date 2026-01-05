@@ -1,0 +1,25 @@
+{{ define "main" }}
+<article class="blog-post">
+    <a href="/blog/" class="back-link">← back to all posts</a>
+    
+    <header class="blog-post-header">
+        <div class="blog-post-meta">
+            <span>{{ .Date.Format "2006-01-02" }}</span>
+            <span>~{{ .Params.tokens | default "1.2k" }} tokens</span>
+            <span>{{ .ReadingTime }} min read</span>
+        </div>
+        <h1 class="blog-post-title">{{ .Title }}</h1>
+        {{ with .Params.tags }}
+        <div class="blog-post-tags">
+            {{ range . }}
+            <span class="tag">{{ . }}</span>
+            {{ end }}
+        </div>
+        {{ end }}
+    </header>
+
+    <div class="blog-post-content">
+        {{ .Content }}
+    </div>
+</article>
+{{ end }}
