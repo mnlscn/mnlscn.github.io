@@ -1,221 +1,87 @@
-# Manuel Scionti - Portfolio
+# Manuel Scionti - Terminal Portfolio
 
-Personal portfolio built with Hugo featuring a code/terminal aesthetic.
+A Unix terminal-style portfolio built with Hugo.
+
+## 🚀 Quick Deploy
+
+1. **Upload this entire folder** to your GitHub repo `mnlscn.github.io`
+2. Go to **Settings → Pages → Source** → Select **"GitHub Actions"**
+3. Wait 2 minutes for the build
+4. Visit `mnlscn.github.io` 🎉
+
+## 📝 Adding Blog Posts
+
+Create a new file in `content/blog/`:
+
+```markdown
+---
+title: "Your Post Title"
+date: 2025-01-20
+description: "A brief description"
+tags: ["AI", "LLM", "Tutorial"]
+---
+
+Your content here in Markdown...
+```
+
+Then commit and push — GitHub Actions will rebuild automatically.
+
+## 🛠️ Local Development (Optional)
+
+```bash
+# Install Hugo (macOS)
+brew install hugo
+
+# Run locally
+hugo server -D
+
+# Open http://localhost:1313
+```
 
 ## 📁 Structure
 
 ```
-manuel-portfolio/
-├── hugo.toml              # Site configuration
 ├── content/
-│   ├── _index.md          # Homepage content
+│   ├── _index.md          # Homepage
 │   └── blog/
-│       ├── _index.md      # Blog list page
 │       └── *.md           # Blog posts
 ├── layouts/
 │   ├── _default/
 │   │   └── baseof.html    # Base template
 │   ├── blog/
-│   │   ├── list.html      # Blog list template
-│   │   └── single.html    # Single post template
-│   └── index.html         # Homepage template
-└── static/
-    ├── css/style.css      # All styles
-    └── js/main.js         # Neural network + effects
+│   │   ├── list.html      # Blog list
+│   │   └── single.html    # Blog post
+│   └── index.html         # Homepage
+├── static/
+│   ├── css/style.css      # Terminal styles
+│   └── js/main.js         # Interactivity
+├── hugo.toml              # Site config
+└── .github/workflows/
+    └── hugo.yml           # Auto-deploy
 ```
 
-## 🚀 Setup & Development
+## ✏️ Customization
 
-### 1. Install Hugo
+Edit `hugo.toml` to update:
+- Email
+- Social links
+- Site description
 
-**macOS:**
-```bash
-brew install hugo
-```
+Edit `layouts/index.html` to update:
+- About section content
+- Projects list
+- Skills
 
-**Windows:**
-```bash
-choco install hugo-extended
-```
+## 🎨 Terminal Commands
 
-**Linux:**
-```bash
-sudo apt install hugo
-# oppure
-sudo snap install hugo
-```
+Users can type commands or click buttons:
+- `about` - Show about section
+- `projects` - List projects
+- `skills` - Show skills
+- `blog` - View blog posts
+- `contact` - Contact info
+- `github` - Open GitHub
+- `linkedin` - Open LinkedIn
+- `help` - Show all commands
 
-### 2. Run locally
-
-```bash
-cd manuel-portfolio
-hugo server -D
-```
-
-Apri http://localhost:1313 nel browser.
-
-### 3. Add a new blog post
-
-```bash
-hugo new blog/my-new-post.md
-```
-
-Oppure crea manualmente un file in `content/blog/`:
-
-```markdown
----
-title: "Titolo del Post"
-date: 2025-01-20
-tags: ["AI", "LLM"]
-tokens: "1.5k"
----
-
-Il contenuto del tuo post qui...
-```
-
-## 📤 Deploy su GitHub Pages
-
-### Step 1: Crea il repository
-
-Se non esiste già, crea `mnlscn.github.io` su GitHub.
-
-### Step 2: Configura GitHub Actions
-
-Crea il file `.github/workflows/hugo.yml`:
-
-```yaml
-name: Deploy Hugo site to Pages
-
-on:
-  push:
-    branches: ["main"]
-  workflow_dispatch:
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
-
-defaults:
-  run:
-    shell: bash
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    env:
-      HUGO_VERSION: 0.124.0
-    steps:
-      - name: Install Hugo CLI
-        run: |
-          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
-          && sudo dpkg -i ${{ runner.temp }}/hugo.deb
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          submodules: recursive
-      - name: Setup Pages
-        id: pages
-        uses: actions/configure-pages@v4
-      - name: Build with Hugo
-        env:
-          HUGO_ENVIRONMENT: production
-          HUGO_ENV: production
-        run: |
-          hugo \
-            --minify \
-            --baseURL "${{ steps.pages.outputs.base_url }}/"
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./public
-
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
-```
-
-### Step 3: Abilita GitHub Pages
-
-1. Vai su GitHub → Repository → Settings → Pages
-2. Source: seleziona "GitHub Actions"
-
-### Step 4: Push e deploy
-
-```bash
-git add .
-git commit -m "Initial portfolio"
-git push origin main
-```
-
-GitHub Actions builderà e deployerà automaticamente.
-
-### Step 5: Custom domain (opzionale)
-
-1. Compra il dominio (es. `manuel-info.md`)
-2. Crea file `static/CNAME` con dentro solo: `manuel-info.md`
-3. Dal provider DNS, aggiungi:
-   - Type: CNAME
-   - Host: @ (o www)
-   - Value: mnlscn.github.io
-
-## ✏️ Personalizzazione
-
-### Modificare i dati personali
-
-Edita `hugo.toml`:
-
-```toml
-[params]
-  email = "tua@email.com"
-  github = "https://github.com/tuousername"
-  linkedin = "https://linkedin.com/in/tuoprofilo"
-```
-
-### Modificare l'homepage
-
-Edita `layouts/index.html` — contiene tutto l'HTML delle sezioni.
-
-### Modificare gli stili
-
-Edita `static/css/style.css` — tutte le variabili colore sono in `:root`.
-
-### Modificare le animazioni
-
-Edita `static/js/main.js` — neural network e token streaming.
-
-## 📝 Scrivere blog post
-
-I post sono scritti in Markdown. Supportano:
-
-- **Headers**: `## Titolo`
-- **Code blocks**: ` ```python ... ``` `
-- **Links**: `[testo](url)`
-- **Lists**: `- item`
-- **Blockquotes**: `> citazione`
-
-Il frontmatter richiesto:
-
-```yaml
----
-title: "Titolo"
-date: 2025-01-20
-tags: ["tag1", "tag2"]  # opzionale
-tokens: "1.5k"          # opzionale, per l'estetica
----
-```
-
----
-
-Built with Hugo 🖤
+Keyboard shortcuts: `1` `2` `3` `4` `5` for sections, `/` to focus input.

@@ -1,50 +1,35 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode }}">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+    <title>{{ if .IsHome }}manuel@portfolio:~${{ else }}{{ .Title }} | Manuel Scionti{{ end }}</title>
     <meta name="description" content="{{ .Site.Params.description }}">
-    
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <!-- Background elements -->
-    <div class="grid-bg"></div>
-    <canvas id="neural-bg"></canvas>
+    <div class="terminal">
+        <div class="window">
+            <div class="window-header">
+                <div class="window-btn red"></div>
+                <div class="window-btn yellow"></div>
+                <div class="window-btn green"></div>
+                <div class="window-title">manuel@portfolio:~{{ if not .IsHome }}/{{ .Section }}{{ end }}</div>
+            </div>
+            <div class="window-body">
+                {{ block "main" . }}{{ end }}
 
-    <!-- Navigation -->
-    <nav>
-        <a href="/" class="logo">
-            <span class="logo-file">manuel-info.md</span>
-        </a>
-        <ul class="nav-links">
-            <li><a href="/#about"><span class="method">GET</span> /about</a></li>
-            <li><a href="/#projects"><span class="method">GET</span> /projects</a></li>
-            <li><a href="/blog/"><span class="method">GET</span> /blog</a></li>
-            <li><a href="/#contact"><span class="method">POST</span> /contact</a></li>
-        </ul>
-    </nav>
-
-    <main>
-        {{ block "main" . }}{{ end }}
-    </main>
-
-    <!-- Footer -->
-    <footer>
-        <p class="footer-text">
-            <span class="comment"># Built with curiosity and caffeine</span><br>
-            <span class="comment"># © {{ now.Year }} Manuel Scionti</span>
-        </p>
-    </footer>
-
-    <!-- Scripts -->
+                <!-- Footer -->
+                <div class="footer">
+                    <span style="color: var(--green);">exit 0</span> · Built with curiosity · 
+                    <a href="https://github.com/mnlscn" target="_blank">Source on GitHub</a>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="/js/main.js"></script>
 </body>
 </html>

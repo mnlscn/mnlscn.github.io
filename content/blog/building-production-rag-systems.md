@@ -1,52 +1,47 @@
 ---
 title: "Building Production-Ready RAG Systems"
 date: 2025-01-15
-tags: ["RAG", "LLM", "Production"]
-tokens: "2.4k"
+description: "Lessons learned from deploying Retrieval-Augmented Generation at enterprise scale"
+tags: ["RAG", "LLM", "Production", "Vector Databases"]
 ---
 
-Retrieval-Augmented Generation (RAG) has become the go-to pattern for building LLM applications that need access to custom knowledge bases. But moving from a demo to a production system reveals challenges that aren't obvious at first.
+After deploying several RAG systems in production, I've learned that the gap between a working prototype and a reliable production system is significant. Here are the key lessons.
 
-## The Gap Between Demo and Production
+## The Retrieval Quality Problem
 
-Most RAG tutorials show you how to chunk documents, embed them, and retrieve relevant context. This works great for demos. But in production, you'll face:
+Most tutorials focus on the generation part, but **retrieval is where most RAG systems fail**. If you retrieve irrelevant chunks, even the best LLM can't save you.
 
-- **Inconsistent retrieval quality** — sometimes the right chunks don't surface
-- **Latency issues** — vector search + LLM inference adds up
-- **Stale data** — your knowledge base needs updates
-- **Evaluation nightmares** — how do you know if it's actually working?
+### What Actually Works
 
-## Lessons from the Field
-
-After deploying several RAG systems at enterprise scale, here are patterns that actually work:
-
-### 1. Hybrid Search is Non-Negotiable
-
-Pure vector search misses exact matches. Pure keyword search misses semantic similarity. Use both:
+1. **Hybrid search** — Combine dense embeddings with BM25. Neither alone is sufficient.
+2. **Chunk overlap** — 20% overlap between chunks preserves context across boundaries.
+3. **Metadata filtering** — Don't just rely on semantic similarity. Use structured filters.
 
 ```python
-results = hybrid_search(
-    query=user_query,
-    vector_weight=0.7,
-    keyword_weight=0.3
+# Example: Hybrid retrieval with filtering
+results = vectorstore.search(
+    query=query,
+    filter={"department": user.department},
+    hybrid_alpha=0.7  # 70% semantic, 30% keyword
 )
 ```
 
-### 2. Chunk Overlap Matters More Than Size
+## Evaluation Is Everything
 
-Everyone focuses on chunk size. But overlap between chunks is often more important for maintaining context continuity.
+You can't improve what you can't measure. I use a simple framework:
 
-### 3. Build Evaluation Into Your Pipeline
+- **Retrieval precision** — Are the top-k chunks relevant?
+- **Answer faithfulness** — Does the answer stick to retrieved context?
+- **Answer relevance** — Does it actually answer the question?
 
-You can't improve what you can't measure. Track:
-- Retrieval precision/recall
-- Answer relevance scores
-- User feedback signals
+## The Cost Reality
 
-## What's Next
+At scale, costs add up quickly. Some strategies that helped:
 
-In the next post, I'll dive deeper into evaluation strategies and share some tooling we've built internally.
+- Cache embeddings aggressively
+- Use smaller models for retrieval, larger for generation
+- Implement request batching
 
 ---
 
-*Have questions or want to discuss? Reach out on [LinkedIn](https://www.linkedin.com/in/manuelscionti/).*
+More detailed posts on each of these topics coming soon. Feel free to reach out on [LinkedIn](https://www.linkedin.com/in/manuelscionti/) if you want to discuss RAG architectures!

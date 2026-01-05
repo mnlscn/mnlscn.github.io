@@ -1,30 +1,52 @@
 {{ define "main" }}
-<div class="page-header">
-    <div class="section-comment">all inference logs</div>
-    <h1 class="section-title"><span class="bracket">{</span> blog <span class="bracket">}</span></h1>
+<!-- Back Link -->
+<a href="/" class="back-link">
+    <span>←</span> cd ~/portfolio
+</a>
+
+<!-- Command -->
+<div class="line">
+    <span class="prompt">$</span>
+    <span class="command"> ls</span>
+    <span class="flag"> -lt</span>
+    <span class="arg"> blog/</span>
 </div>
 
-<section style="padding-top: 0;">
-    <div class="blog-list">
-        {{ range .Pages }}
-        <a href="{{ .Permalink }}" class="log-entry">
-            <div class="log-timestamp">{{ .Date.Format "2006-01-02 15:04:05" }} UTC</div>
-            <div class="log-title">{{ .Title }}</div>
-            <div class="log-preview">{{ .Summary | truncate 200 }}</div>
-            <div class="log-status">
-                status: published | 
-                tokens: ~{{ .Params.tokens | default "1.2k" }}
-                {{ with .Params.tags }} | tags: {{ delimit . ", " }}{{ end }}
-            </div>
-        </a>
-        {{ else }}
-        <div class="log-entry" style="cursor: default;">
-            <div class="log-timestamp">{{ now.Format "2006-01-02 15:04:05" }} UTC</div>
-            <div class="log-title">No posts yet...</div>
-            <div class="log-preview">Blog posts are in the works. Check back soon for content about LLMs, RAG systems, AI agents, and lessons from production.</div>
-            <div class="log-status">status: drafting</div>
+<div class="output">
+    <div class="output-line" style="margin-bottom: 16px;">
+        <span class="comment"># Technical articles and thoughts on AI</span>
+    </div>
+
+    {{ range .Pages.ByDate.Reverse }}
+    <a href="{{ .Permalink }}" class="blog-item">
+        <div class="blog-item-header">
+            <span class="blog-item-date">{{ .Date.Format "2006-01-02" }}</span>
+            <span class="blog-item-title">{{ .Title }}</span>
+        </div>
+        {{ if .Description }}
+        <div class="blog-item-desc">{{ .Description }}</div>
+        {{ end }}
+        {{ if .Params.tags }}
+        <div class="blog-item-tags">
+            {{ range .Params.tags }}
+            <span class="tech">{{ . }}</span>
+            {{ end }}
         </div>
         {{ end }}
+    </a>
+    {{ else }}
+    <div class="output-line">
+        <span class="comment"># No posts yet. Coming soon...</span>
     </div>
-</section>
+    {{ end }}
+</div>
+
+<!-- Navigation -->
+<div class="input-area">
+    <div style="display: flex; gap: 12px;">
+        <a href="/" class="nav-cmd">
+            <span class="cmd-prefix">cd</span> ~/
+        </a>
+    </div>
+</div>
 {{ end }}
