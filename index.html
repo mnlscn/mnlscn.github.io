@@ -4,78 +4,120 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>manuel@portfolio:~$</title>
+    <meta name="description" content="Manuel Scionti is an AI Engineer focused on production LLM systems after the prototype: retrieval, agent orchestration, evaluation, and reliable GenAI infrastructure.">
+    <meta name="author" content="Manuel Scionti">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mnlscn.github.io/">
+    <meta property="og:title" content="Manuel Scionti - AI Engineer">
+    <meta property="og:description" content="AI Engineer focused on retrieval, agent orchestration, evaluation, and reliable GenAI infrastructure.">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Manuel Scionti - AI Engineer">
+    <meta name="twitter:description" content="AI Engineer focused on retrieval, agent orchestration, evaluation, and reliable GenAI infrastructure.">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <main class="terminal">
-        <div class="window">
-            <header class="window-header">
-                <span class="window-btn red"></span>
-                <span class="window-btn yellow"></span>
-                <span class="window-btn green"></span>
-                <span class="window-title">manuel@portfolio:~</span>
+    <main class="shell" aria-label="Manuel Scionti portfolio terminal">
+        <section class="terminal-window">
+            <header class="window-bar">
+                <div class="window-controls" aria-hidden="true">
+                    <span class="control red"></span>
+                    <span class="control yellow"></span>
+                    <span class="control green"></span>
+                </div>
+                <div class="window-title">manuel@portfolio:~</div>
+                <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme">light</button>
             </header>
 
-            <div class="window-body">
-                <pre class="ascii-header">
- __  __                        _   ____       _             _   _
-|  \/  | __ _ _ __  _   _  ___| | / ___|  ___(_) ___  _ __ | |_(_)
-| |\/| |/ _` | '_ \| | | |/ _ \ | \___ \ / __| |/ _ \| '_ \| __| |
-| |  | | (_| | | | | |_| |  __/ |  ___) | (__| | (_) | | | | |_| |
-|_|  |_|\__,_|_| |_|\__,_|\___|_| |____/ \___|_|\___/|_| |_|\__|_|
-
-        AI Engineer · LLMs · Generative AI · Barcelona 🇪🇸</pre>
-
-                <div class="status-line">
-                    <span class="status-dot"></span>
-                    <span class="status-text"><strong>Status:</strong> Available for opportunities · Open to remote</span>
-                </div>
-
-                <div class="line">
-                    <span class="prompt">$</span>
-                    <span class="command"> cat</span>
-                    <span class="arg"> welcome.txt</span>
-                </div>
-                <div class="output">
-                    <div class="output-line">Welcome to my interactive portfolio!</div>
-                    <div class="output-line welcome-tip">
-                        <span class="comment"># Click the commands below or use keyboard shortcuts</span>
-                    </div>
-                </div>
-
-                <nav class="nav-bar" id="nav-bar"></nav>
-
-                <section id="about" class="section active"></section>
-                <section id="projects" class="section"></section>
-                <section id="skills" class="section"></section>
-                <section id="contact" class="section"></section>
-
-                <div class="input-area">
-                    <div class="line pre-input-help">
-                        <span class="comment"># Type 'help' for available commands or just click above</span>
-                    </div>
-                    <div class="input-line">
+            <div class="terminal-body">
+                <section class="hero-terminal" id="top">
+                    <div class="command-line">
                         <span class="prompt">$</span>
-                        <input
-                            type="text"
-                            class="input-field"
-                            id="terminalInput"
-                            placeholder="Type a command..."
-                            autocomplete="off"
-                            spellcheck="false">
-                        <span class="cursor"></span>
+                        <span class="command">whoami</span>
                     </div>
+
+                    <div class="identity-grid">
+                        <div>
+                            <h1>Manuel Scionti</h1>
+                            <p class="role">AI Engineer</p>
+                            <p class="tagline">Production AI: retrieval, agents, evaluation & infrastructure</p>
+
+                        <div class="status-box">
+                            <div class="status-line">
+                                <span class="status-dot"></span>
+                                <span>open_to_roles = true</span>
+                            </div>
+                            <div class="muted">Barcelona / Remote EU</div>
+                            <div class="muted">applied LLM, AI platform, production RAG</div>
+                        </div>
+                        <div class="hero-ctas">
+                            <a class="cta cta-primary" href="cv.pdf" download="Manuel-Scionti-CV.pdf">
+                                <span class="cta-icon" aria-hidden="true">↓</span>
+                                <span>Download CV</span>
+                            </a>
+                            <a class="cta cta-secondary" href="mailto:scionti.manuel@hotmail.it?subject=AI%20Engineer%20opportunity%20-%20Manuel%20Scionti">
+                                <span class="cta-icon" aria-hidden="true">→</span>
+                                <span>Get in touch</span>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="command-line help-line">
+                    <span class="prompt">$</span>
+                    <span class="command">ls ./portfolio</span>
                 </div>
 
-                <footer class="footer">
-                    <span class="exit-code">exit 0</span> · Built with curiosity ·
-                    <a href="https://github.com/mnlscn" target="_blank" rel="noopener">Source on GitHub</a>
-                </footer>
+                <nav class="command-nav" id="command-nav" aria-label="Portfolio commands"></nav>
+
+                <section class="output-panel" id="output-panel" aria-live="polite"></section>
+
+                <section class="terminal-input" aria-label="Command input">
+                    <div class="hint"># try: about, projects, career, contact · or type <span class="slash-hint">/</span> for commands</div>
+                    <div class="slash-picker-wrap">
+                        <label class="input-row" for="terminal-input">
+                            <span class="prompt input-prompt">&gt;</span>
+                            <input id="terminal-input" type="text" autocomplete="off" spellcheck="false" placeholder="ask manuel anything... (try /help)">
+                            <span class="cursor" aria-hidden="true"></span>
+                        </label>
+                        <div class="slash-picker" id="slash-picker" role="listbox" hidden>
+                            <div class="slash-picker-header">slash commands</div>
+                            <ul class="slash-picker-list" id="slash-picker-list"></ul>
+                            <div class="slash-picker-footer">↑↓ select · ⏎ run · ⇥ autocomplete · esc close</div>
+                        </div>
+                    </div>
+                </section>
+
             </div>
-        </div>
+
+            <footer class="status-bar" aria-label="Status">
+                <div class="status-segment">
+                    <span class="status-cwd">~/manuel-scionti</span>
+                    <span class="status-sep">·</span>
+                    <span class="status-branch">on <span class="status-branch-name">main</span></span>
+                </div>
+                <div class="status-segment status-segment-right">
+                    <div class="model-picker-wrap">
+                        <button class="status-model" id="status-model-toggle" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Change model">claude-sonnet-4-5</button>
+                        <div class="model-picker" id="model-picker" role="listbox" hidden>
+                            <div class="model-picker-header">select model</div>
+                            <ul class="model-picker-list" id="model-picker-list"></ul>
+                            <div class="model-picker-footer">esc to close</div>
+                        </div>
+                    </div>
+                    <span class="status-sep">·</span>
+                    <span class="status-context">ctx: <span id="status-context-pct">4%</span></span>
+                    <span class="status-sep">·</span>
+                    <span class="status-mode">◉ open_to_roles</span>
+                    <span class="status-sep">·</span>
+                    <a href="https://github.com/mnlscn" target="_blank" rel="noopener" class="status-link">github</a>
+                </div>
+            </footer>
+        </section>
     </main>
 
     <script src="app.js" defer></script>
