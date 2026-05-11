@@ -300,7 +300,7 @@ function renderProjects() {
             <div class="project-grid">${projects}</div>
             <div class="terminal-card compact-section">
                 <h3><span class="key">writing</span></h3>
-                <p>Published technical articles on Retrieval-Augmented Generation and prompt engineering for Neodata Group's blog. <a href="https://github.com/mnlscn" target="_blank" rel="noopener" class="project-link">more on github -&gt;</a></p>
+                <p>Published technical articles on Retrieval-Augmented Generation and prompt engineering for Neodata Group's blog. <a href="https://neodatagroup.ai/it/author/manuel-scionti/" target="_blank" rel="noopener" class="project-link">read on neodata -&gt;</a></p>
             </div>
         `,
         '/projects'
