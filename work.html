@@ -1,32 +1,31 @@
 <!doctype html>
 <html lang="en">
 
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Work — Manuel Scionti</title>
-    <meta name="description" content="Selected production AI, open-source, and community work by Manuel Scionti.">
+    <title>Work · Manuel Scionti</title>
+    <meta name="description" content="Case studies from production AI systems: enterprise RAG at ADP, a bilingual screening agent, Graph RAG over legal corpora, and applied AI at Neodata.">
     <meta name="author" content="Manuel Scionti">
 
-    <meta name="theme-color" content="#f5f1e8" media="(prefers-color-scheme: light)">
-    <meta name="theme-color" content="#151412" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#f7f4ee" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#151410" media="(prefers-color-scheme: dark)">
 
     <link rel="canonical" href="https://mnlscn.github.io/work.html">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://mnlscn.github.io/work.html">
-    <meta property="og:title" content="Work — Manuel Scionti">
-    <meta property="og:description" content="Selected production AI, open-source, and community work by Manuel Scionti.">
+    <meta property="og:title" content="Work · Manuel Scionti">
+    <meta property="og:description" content="Case studies told as context → decision → result: enterprise RAG, evaluation gates, agents, and Graph RAG.">
     <meta property="og:site_name" content="Manuel Scionti">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Work — Manuel Scionti">
-    <meta name="twitter:description" content="Selected production AI, open-source, and community work by Manuel Scionti.">
+    <meta name="twitter:title" content="Work · Manuel Scionti">
+    <meta name="twitter:description" content="Case studies told as context → decision → result: enterprise RAG, evaluation gates, agents, and Graph RAG.">
 
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%232b2926'/%3E%3Ctext x='12' y='68' font-size='56' fill='%23f5f1e8' font-family='monospace'%3E%26gt;_%3C/text%3E%3C/svg%3E">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%23e0301f'/%3E%3Ctext x='50' y='71' font-size='58' text-anchor='middle' fill='%23fbf7ef' font-family='sans-serif' font-weight='600'%3Em%3C/text%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600;1,400&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
     <script src="app.js"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -34,86 +33,257 @@
 <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
 
-    <div class="page">
-        <header class="site-header">
-    <a class="terminal-home" href="index.html">[manuel@scionti ~]$ ./home</a>
-
-    <nav class="site-nav" aria-label="Primary navigation">
-
-        <a href="work.html" aria-current="page">work</a>
-
-        <a href="background.html">background</a>
-
-        <a href="writing.html">writing</a>
-
-        <a href="contact.html">contact</a>
-
-        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark theme">dark</button>
-    </nav>
-</header>
-
-
-        <main class="page-main" id="main-content">
-            <section class="section" aria-labelledby="work-title">
-    <header class="section-header">
-        <p class="section-command">$ ls ./selected-work</p>
-        <h1 class="page-title" id="work-title">Selected work</h1>
-        <p>Three projects that say the most about how I like to work: useful systems, public craft, and shared momentum.</p>
+    <header class="site-header">
+        <div class="container">
+            <a class="wordmark" href="index.html">mnlscn<span>.</span>io</a>
+            <nav class="site-nav" aria-label="Primary navigation">
+                <a href="index.html">home</a>
+                <a href="about.html">about</a>
+                <a href="work.html" aria-current="page">work</a>
+                <a href="writing.html">writing</a>
+                <a href="contact.html">contact</a>
+                <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark theme">dark</button>
+            </nav>
+        </div>
     </header>
 
-    <div class="work-list">
+    <main id="main-content">
 
-        <article class="work-item">
-            <p class="work-meta">01 · Production AI</p>
-            <h2>
+        <div class="page-head">
+            <div class="container">
+                <p class="kicker">work</p>
+                <h1>Selected work</h1>
+                <p class="section-intro">Each case is told the same way: the context, the decision that mattered, and the result. Public work is linked; enterprise work is described as far as confidentiality allows.</p>
+            </div>
+        </div>
 
-                ADP AI FAQ Platform
-            </h2>
-            <p>An offline batch RAG system for payroll, HR, and compliance content, with hybrid retrieval, reranking, and evaluation gates before changes reach production.</p>
-            <p class="work-result">In production for 6 business units and 1,000+ daily users. The work improved retrieval quality by 20%, halved integration time, and reduced CI/CD time from 25 to 16 minutes.</p>
+        <section class="section" aria-labelledby="cases-title" style="padding-top: 0;">
+            <div class="container">
+                <h2 class="section-title" id="cases-title" hidden>Case studies</h2>
+                <div class="case-list">
 
-        </article>
+                    <article class="case" id="paisy" aria-labelledby="paisy-title">
+                        <div class="case-side">
+                            <span class="case-num" aria-hidden="true">01</span>
+                            <span>ADP · Paisy</span>
+                            <span>Barcelona · 2025–now</span>
+                            <span>production · 20+ clients</span>
+                        </div>
+                        <div class="case-body">
+                            <h3 id="paisy-title">FAQ generation over a 5,000-page payroll wiki</h3>
+                            <p>German-market payroll clients were generating a steady stream of support tickets whose answers already existed, buried in a 5,000+ page internal wiki. I owned the design of the answer pipeline end-to-end.</p>
+                            <aside class="decision">
+                                <span class="label">key decision</span>
+                                <p>Generate the FAQ corpus offline in batch instead of retrieving live at query time. Query latency drops to near zero, LLM cost becomes bounded and predictable, and every answer can pass a release gate before a client ever sees it: an LLM-as-judge harness plus subject-matter-expert review.</p>
+                            </aside>
+                            <div class="result">
+                                <span class="label">result</span>
+                                <p>In production for 20+ enterprise clients; technical support tickets down <em>35%</em>. The evaluation harness became the standing release gate for the pipeline.</p>
+                            </div>
+                            <p class="stack">python · fastapi · aws lambda · databricks · llm-as-judge · sme eval gates</p>
+                        </div>
+                    </article>
 
-        <article class="work-item">
-            <p class="work-meta">02 · Open source</p>
-            <h2>
-                <a href="https://github.com/IBM/Agentics" target="_blank" rel="noopener noreferrer">
-                IBM / Agentics <span aria-hidden="true">↗</span></a>
-            </h2>
-            <p>Contributions to IBM’s Python framework for typed, structured agentic computation, spanning runtime fixes, documentation, and dependency cleanup.</p>
+                    <article class="case" id="wfn" aria-labelledby="wfn-title">
+                        <div class="case-side">
+                            <span class="case-num" aria-hidden="true">02</span>
+                            <span>ADP · WorkForceNow</span>
+                            <span>Barcelona · 2025–now</span>
+                            <span>production</span>
+                        </div>
+                        <div class="case-body">
+                            <h3 id="wfn-title">Hybrid retrieval over 15,000+ heterogeneous documents</h3>
+                            <p>A retrieval system over an HR corpus of 15,000+ documents in five formats: Markdown, PDF, DOCX, HTML, DITA. The queries that matter are full of policy names, form IDs, and exact terminology, which is precisely where semantic search underperforms.</p>
+                            <aside class="decision">
+                                <span class="label">key decision</span>
+                                <p>OpenSearch hybrid search over a pure vector store, because keyword-heavy HR queries need lexical precision as much as semantic recall. On top: a reranking stage, and a confidence-based evaluation gate that suppresses low-quality answers rather than shipping them.</p>
+                            </aside>
+                            <div class="result">
+                                <span class="label">result</span>
+                                <p>Reranking improved retrieval quality by <em>+15%</em> on an SME-annotated golden set. The eval contract itself became the alignment tool between engineering, product, and platform teams.</p>
+                            </div>
+                            <p class="stack">python · opensearch · hybrid search · reranking · confidence gating</p>
+                        </div>
+                    </article>
 
+                    <article class="case" id="lucia" aria-labelledby="lucia-title">
+                        <div class="case-side">
+                            <span class="case-num" aria-hidden="true">03</span>
+                            <span>Personal · open source</span>
+                            <span>2026</span>
+                        </div>
+                        <div class="case-body">
+                            <h3 id="lucia-title">Lucia, a bilingual HR screening agent</h3>
+                            <p>Delivery-driver candidates weren’t answering recruiter phone calls: 60% never picked up. Lucia reframes screening as an async chat in Spanish or English: it collects seven required fields, validates answers, and routes each candidate to a human recruiter with a triage label and a structured summary.</p>
+                            <aside class="decision">
+                                <span class="label">key decision</span>
+                                <p>Deterministic code owns the conversation flow and the triage; the LLM’s only job is phrasing. Vague answers can’t erase earlier data, triage is computed in code rather than by the model, and the agent never makes a hiring decision, by design, for GDPR Article 22 and the EU AI Act.</p>
+                            </aside>
+                            <div class="result">
+                                <span class="label">result</span>
+                                <p>Public code plus a full write-up of the reasoning.
+                                    <a href="https://github.com/mnlscn/hr-screening-agent" target="_blank" rel="noopener noreferrer">GitHub ↗</a> ·
+                                    <a href="https://manuelscionti.substack.com/p/conversational-ai-is-a-ux-problem" target="_blank" rel="noopener noreferrer">the essay ↗</a>
+                                </p>
+                            </div>
+                            <p class="stack">python · claude (haiku + sonnet) · streamlit · sqlite · pytest · ruff</p>
+                        </div>
+                    </article>
 
-            <p class="work-result">
-                <a href="https://github.com/IBM/Agentics/pulls?q=is%3Apr+author%3Amnlscn" target="_blank" rel="noopener noreferrer">View my contributions <span aria-hidden="true">↗</span></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" aria-labelledby="hackathons-title">
+            <div class="container">
+                <p class="kicker">hackathons</p>
+                <h2 class="section-title" id="hackathons-title">Hackathons</h2>
+                <div class="case-list">
+
+                    <article class="case" id="graph-rag" aria-labelledby="graphrag-title">
+                        <div class="case-side">
+                            <span>IBM × Datapizza</span>
+                            <span>Milan · competitor</span>
+                            <span>top 10% of 600+ applicants</span>
+                        </div>
+                        <div class="case-body">
+                            <h3 id="graphrag-title">Graph RAG for a cross-referenced legal corpus</h3>
+                            <p>Laws and regulations cite each other constantly, and ordinary RAG falls apart on those cross-references: the answer to one question lives in three documents. My team built a Graph RAG architecture over a Neo4j AuraDB knowledge graph.</p>
+                            <aside class="decision">
+                                <span class="label">key decision</span>
+                                <p>A two-step pipeline first induces the graph schema (entity types and relationship types), then populates concrete nodes and relationships per document. Crucially, relationships are also built <em>across</em> documents, linking entities that reference one another in different files. The graph is queried through an agentic loop that picks between hybrid search and text-to-Cypher.</p>
+                            </aside>
+                            <div class="video-embed">
+                                <iframe src="https://www.youtube-nocookie.com/embed/xtPupeMEooE" title="Graph RAG demo presentation, IBM × Datapizza hackathon" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                            </div>
+                            <p class="stack">python · neo4j auradb · langchain · langgraph · pgvector</p>
+                        </div>
+                    </article>
+
+                    <article class="case" id="hackatania" aria-labelledby="hackatania-title">
+                        <div class="case-side">
+                            <span>Hackatania I &amp; II</span>
+                            <span>University of Catania</span>
+                            <span>organizer · tech lead</span>
+                        </div>
+                        <div class="case-body">
+                            <h3 id="hackatania-title">Two editions of a GenAI hackathon</h3>
+                            <p>With Neodata and the University of Catania I organised and technically led two editions of Hackatania: defined the technical challenges, ran the opening workshops (LLMs and RAG in the first edition, agents and multi-agent systems in the second), and supervised the teams through the weekend.</p>
+                            <div class="result">
+                                <span class="label">links</span>
+                                <p>
+                                    <a href="https://neodata-hackatania.devpost.com/" target="_blank" rel="noopener noreferrer">Hackatania I on Devpost ↗</a>
+                                    <span aria-hidden="true"> · </span>
+                                    <a href="https://hackatania-2.devpost.com/" target="_blank" rel="noopener noreferrer">Hackatania II on Devpost ↗</a>
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="section" aria-labelledby="oss-title">
+            <div class="container">
+                <p class="kicker">open source</p>
+                <h2 class="section-title" id="oss-title">Open source</h2>
+                <p class="section-intro">Recent contributions, from agent frameworks to audio and music-information-retrieval libraries. The audio ones are part of the AI × music thread.</p>
+                <ul class="rows" id="open-source">
+                    <li>
+                        <span class="row-meta">IBM · Agentics</span>
+                        <span class="row-body">
+                            <strong>Agent framework fixes</strong>
+                            <p>Four PRs, three merged: a fix for an undefined variable in the VLLM transducer execution path, import hygiene across core modules, and Getting Started documentation corrections.</p>
+                            <span class="row-links"><a href="https://github.com/IBM/Agentics/pulls?q=is%3Apr+author%3Amnlscn" target="_blank" rel="noopener noreferrer">PRs on GitHub ↗</a></span>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="row-meta">soundata</span>
+                        <span class="row-body">
+                            <strong>Type hints for a sound-dataset library</strong>
+                            <p>Type-hint coverage across the library’s core: annotations, download utilities, validation, and core modules.</p>
+                            <span class="row-links"><a href="https://github.com/soundata/soundata/pulls?q=is%3Apr+author%3Amnlscn" target="_blank" rel="noopener noreferrer">PRs on GitHub ↗</a></span>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="row-meta">mirdata</span>
+                        <span class="row-body">
+                            <strong>NumPy 2.4+ compatibility fix</strong>
+                            <p>Approved fix for a scalar-conversion break in the GTZAN genre tempo loader on NumPy 2.4+.</p>
+                            <span class="row-links"><a href="https://github.com/mir-dataset-loaders/mirdata/pulls?q=is%3Apr+author%3Amnlscn" target="_blank" rel="noopener noreferrer">PRs on GitHub ↗</a></span>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section" aria-labelledby="more-title">
+            <div class="container">
+                <p class="kicker">more systems</p>
+                <h2 class="section-title" id="more-title">More systems</h2>
+                <ul class="rows">
+                    <li>
+                        <span class="row-meta">Neodata · lead</span>
+                        <span class="row-body">
+                            <strong>Airport media-intelligence platform</strong>
+                            <p>Project lead for an LLM-powered OSINT system monitoring Catania Airport’s digital footprint: hybrid search over 50k+ social interactions and three years of daily press, surfacing reputation and threat signals to a C-suite dashboard. Mentored two junior engineers; shipped an approved MVP.</p>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="row-meta">Neodata</span>
+                        <span class="row-body">
+                            <strong>Document-intelligence framework</strong>
+                            <p>Internal NLP + RAG framework extracting structured data from tables, spreadsheets, and enterprise documents: 75% fewer extraction errors than open-source baselines like pdfplumber and PyMuPDF.</p>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="row-meta">Neodata</span>
+                        <span class="row-body">
+                            <strong>Neovid, multimodal retrieval</strong>
+                            <p>Led design and prototyping of retrieval over image, video, and document collections: multimodal LLMs, fine-tuned YOLOv8, Whisper STT. Processed 1,000+ videos for Italy’s largest broadcaster.</p>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="row-meta">Neodata · R&amp;D</span>
+                        <span class="row-body">
+                            <strong>STORM in production</strong>
+                            <p>Implemented the STORM paper (Shao et al.) with LangGraph to automate strategic consulting reports: roughly 2× analyst-time savings.</p>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="row-meta">ADP · platform</span>
+                        <span class="row-body">
+                            <strong>Platform engineering &amp; AI enablement</strong>
+                            <p>Standardised feature patterns that cut delivery of new use cases from months to weeks; −25% CI build time. Ran the internal workshop that standardised AI coding-agent practice across a 20-person engineering group.</p>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-id">
+                    <p class="footer-name">Manuel Scionti</p>
+                    <p class="footer-tag">AI engineer · Barcelona</p>
+                </div>
+                <nav class="footer-links" aria-label="Elsewhere">
+                    <a href="mailto:scionti.manuel@hotmail.it">email</a>
+                    <a href="https://github.com/mnlscn" target="_blank" rel="noopener noreferrer">github</a>
+                    <a href="https://www.linkedin.com/in/manuelscionti/" target="_blank" rel="noopener noreferrer">linkedin</a>
+                    <a href="https://manuelscionti.substack.com/" target="_blank" rel="noopener noreferrer">substack</a>
+                    <a href="assets/manuel-scionti-cv.pdf" download>cv ↓</a>
+                </nav>
+            </div>
+            <p class="footer-fine">
+                <span>© 2026 Manuel Scionti</span>
+                <span class="motto-line">problem finding <strong>&gt;</strong> problem solving</span>
             </p>
-
-        </article>
-
-        <article class="work-item">
-            <p class="work-meta">03 · Community</p>
-            <h2>
-
-                Hackatania
-            </h2>
-            <p>I organised and tech-led two GenAI hackathons with the University of Catania, creating a place for students and builders to move from ideas to working prototypes.</p>
-
-
-            <p class="work-result">
-                <a href="https://neodata-hackatania.devpost.com/" target="_blank" rel="noopener noreferrer">Edition one <span aria-hidden="true">↗</span></a><span aria-hidden="true"> · </span><a href="https://hackatania-2.devpost.com/" target="_blank" rel="noopener noreferrer">Edition two <span aria-hidden="true">↗</span></a>
-            </p>
-
-        </article>
-
-    </div>
-</section>
-
-        </main>
-
-        <footer class="site-footer">
-    <span>© 2026 Manuel Scionti</span>
-    <span class="footer-command" aria-hidden="true">$ exit 0</span>
-</footer>
-
-    </div>
+        </div>
+    </footer>
 </body>
 </html>
