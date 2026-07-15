@@ -6,27 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Manuel Scionti · AI Engineer</title>
-    <meta name="description" content="Manuel Scionti is an AI engineer in Barcelona working on production RAG, agentic systems, and LLM evaluation. Case studies, writing, and contact.">
+    <meta name="description" content="AI engineer in Barcelona. I build the part of AI systems that comes after the demo: production RAG, agentic systems, and the evals that keep them honest.">
     <meta name="author" content="Manuel Scionti">
 
-    <meta name="theme-color" content="#f7f4ee" media="(prefers-color-scheme: light)">
-    <meta name="theme-color" content="#151410" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#fdfdfb" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#131311" media="(prefers-color-scheme: dark)">
 
     <link rel="canonical" href="https://mnlscn.github.io/">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://mnlscn.github.io/">
     <meta property="og:title" content="Manuel Scionti · AI Engineer">
-    <meta property="og:description" content="Production RAG, agentic systems, and LLM evaluation. I build AI systems for the part that starts after the prototype.">
+    <meta property="og:description" content="I build the part of AI systems that comes after the demo: production RAG, agentic systems, and the evals that keep them honest.">
     <meta property="og:site_name" content="Manuel Scionti">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Manuel Scionti · AI Engineer">
-    <meta name="twitter:description" content="Production RAG, agentic systems, and LLM evaluation. I build AI systems for the part that starts after the prototype.">
+    <meta name="twitter:description" content="I build the part of AI systems that comes after the demo: production RAG, agentic systems, and the evals that keep them honest.">
 
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%23e0301f'/%3E%3Ctext x='50' y='71' font-size='58' text-anchor='middle' fill='%23fbf7ef' font-family='sans-serif' font-weight='600'%3Em%3C/text%3E%3C/svg%3E">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
-    <script src="app.js"></script>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext x='50' y='76' font-size='80' text-anchor='middle' font-family='Menlo,monospace' fill='%23d5a44c'%3Em%3C/text%3E%3C/svg%3E">
     <link rel="stylesheet" href="styles.css">
 
     <script type="application/ld+json">
@@ -35,6 +31,7 @@
         "@type": "Person",
         "name": "Manuel Scionti",
         "jobTitle": "AI Engineer",
+        "email": "mailto:scionti.manuel@hotmail.it",
         "url": "https://mnlscn.github.io/",
         "address": { "@type": "PostalAddress", "addressLocality": "Barcelona", "addressCountry": "ES" },
         "worksFor": { "@type": "Organization", "name": "ADP" },
@@ -53,170 +50,80 @@
 
     <header class="site-header">
         <div class="container">
-            <a class="wordmark" href="index.html">mnlscn<span>.</span>io</a>
+            <a class="wordmark" href="index.html">mnlscn</a>
             <nav class="site-nav" aria-label="Primary navigation">
-                <a href="index.html" aria-current="page">home</a>
+                <a href="index.html" aria-current="page">tl;dr</a>
                 <a href="about.html">about</a>
                 <a href="work.html">work</a>
                 <a href="writing.html">writing</a>
-                <a href="contact.html">contact</a>
-                <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark theme">dark</button>
             </nav>
         </div>
     </header>
 
-    <main id="main-content">
+    <main id="main-content" class="container">
 
-        <section class="hero" aria-labelledby="intro-title">
-            <div class="container hero-grid">
-                <div class="hero-copy">
-                    <p class="kicker">Manuel Scionti · AI engineer · Barcelona</p>
-                    <h1 id="intro-title">I build AI systems for the part that starts <mark>after the prototype</mark>.</h1>
-                    <div class="hero-lede">
-                        <p>Production RAG, agentic systems, and the evaluation that keeps them honest. At ADP, I’m on the core team behind an enterprise AI platform used across two regions. Before that: document intelligence and multimodal systems at Neodata, data engineering at Koexai, and an unusual <a href="about.html">route into the field</a>.</p>
-                    </div>
-                    <p class="motto" aria-label="Personal motto">problem finding <strong>&gt;</strong> problem solving</p>
-                    <div class="cta-row">
-                        <a class="btn" href="assets/manuel-scionti-cv.pdf" download>download cv ↓</a>
-                        <a class="btn-quiet" href="contact.html">get in touch →</a>
-                        <span class="cta-note">open to applied-AI &amp; forward-deployed roles · Barcelona / hybrid / remote</span>
-                    </div>
-                </div>
-                <!-- Avatar: when you have a photo, drop it at assets/avatar.jpg and
-                     replace the <svg>...</svg> below with:
-                     <img src="assets/avatar.jpg" alt="Manuel Scionti"> -->
-                <div class="avatar" aria-hidden="true">
-                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img">
-                        <rect width="100" height="100" fill="#17160f"/>
-                        <text x="50" y="60" text-anchor="middle" font-family="JetBrains Mono, monospace" font-weight="700" font-size="30" fill="#ff5642">m_</text>
-                        <text x="50" y="82" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8" fill="#8f8977">your photo here</text>
-                    </svg>
-                </div>
-            </div>
+        <section class="section" aria-labelledby="intro-title">
+            <p class="kicker">manuel scionti · ai engineer · barcelona</p>
+            <h1 id="intro-title">tl;dr</h1>
+            <img class="photo" src="manuel.jpg" alt="Manuel Scionti, smiling in front of a blue-tiled wall" width="1568" height="560">
+            <p class="lede">I build the part of AI systems that comes after the demo: production RAG, agentic systems, and the evals that keep them honest.</p>
+            <p class="motto" aria-label="Personal motto">problem finding &gt;&gt;&gt; problem solving</p>
+
+            <dl class="kv">
+                <dt>now</dt>
+                <dd>AI Engineer at ADP (via Capitole), Barcelona — core team of an enterprise AI platform running in 2 regions across 10+ business units.</dd>
+
+                <dt>before</dt>
+                <dd>Applied AI at Neodata: document intelligence, multimodal retrieval, lead on an airport media-intelligence platform. ML pipelines on AWS at Koexai.</dd>
+
+                <dt>community</dt>
+                <dd>Community manager of <a href="https://www.skool.com/applied-ai-engineers" target="_blank" rel="noopener noreferrer">Applied AI Engineers ↗</a> — engineers moving into applied-AI and forward-deployed roles.</dd>
+
+                <dt>writing</dt>
+                <dd><a href="https://manuelscionti.substack.com/" target="_blank" rel="noopener noreferrer">One Token at a Time ↗</a> — essays on production AI.</dd>
+
+                <dt>open to</dt>
+                <dd>Applied AI · AI Engineer · forward-deployed roles — Barcelona / hybrid / remote.</dd>
+            </dl>
+
+            <nav class="links" aria-label="Profiles and contact">
+                <a href="cv.pdf" download="manuel-scionti-cv.pdf">cv ↓</a>
+                <a href="https://github.com/mnlscn" target="_blank" rel="noopener noreferrer">github ↗</a>
+                <a href="https://www.linkedin.com/in/manuelscionti/" target="_blank" rel="noopener noreferrer">linkedin ↗</a>
+                <a href="https://manuelscionti.substack.com/" target="_blank" rel="noopener noreferrer">substack ↗</a>
+                <a href="mailto:scionti.manuel@hotmail.it">email</a>
+            </nav>
         </section>
 
-        <section class="metrics" aria-label="Track record at a glance">
-            <div class="container">
-                <ul>
-                    <li>
-                        <strong>4+ yrs</strong>
-                        <span>shipping AI &amp; ML systems, prototype to production</span>
-                    </li>
-                    <li>
-                        <strong>15k+</strong>
-                        <span>documents in a hybrid retrieval system I designed</span>
-                    </li>
-                    <li>
-                        <strong>−35%</strong>
-                        <span>support tickets after an FAQ pipeline I owned end-to-end</span>
-                    </li>
-                    <li>
-                        <strong>20+</strong>
-                        <span>enterprise clients running on systems I built</span>
-                    </li>
-                </ul>
-            </div>
+        <section class="section" aria-labelledby="selected-work-title">
+            <h2 class="kicker" id="selected-work-title">selected work</h2>
+            <ul class="worklist">
+                <li><a href="work.html#paisy">FAQ generation over a 5,000-page payroll wiki</a> — <strong>−35%</strong> support tickets across 20+ enterprise clients.</li>
+                <li><a href="work.html#wfn">Hybrid retrieval over 15,000+ heterogeneous documents</a> — reranking <strong>+15%</strong> on the SME golden set.</li>
+                <li><a href="work.html#lucia">Lucia, a bilingual screening agent</a> — deterministic flow; the LLM's only job is phrasing.</li>
+            </ul>
+            <p class="more"><a href="work.html">all work →</a></p>
         </section>
 
-        <section class="section" aria-labelledby="featured-title">
-            <div class="container">
-                <p class="kicker">01 · work</p>
-                <h2 class="section-title" id="featured-title">Selected work</h2>
-                <ul class="cards">
-                    <li>
-                        <a href="work.html#paisy">
-                            <span class="card-arrow" aria-hidden="true">→</span>
-                            <span class="card-meta">ADP · production</span>
-                            <strong>Offline FAQ generation over a 5,000-page wiki</strong>
-                            <small>Chose batch generation over live retrieval: near-zero latency, bounded cost, −35% support tickets for 20+ clients.</small>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="work.html#wfn">
-                            <span class="card-arrow" aria-hidden="true">→</span>
-                            <span class="card-meta">ADP · production</span>
-                            <strong>Hybrid retrieval over 15k+ heterogeneous documents</strong>
-                            <small>Chose OpenSearch hybrid over pure vectors for keyword-heavy HR queries; reranking added +15% on the golden set.</small>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="work.html#lucia">
-                            <span class="card-arrow" aria-hidden="true">→</span>
-                            <span class="card-meta">personal · open source</span>
-                            <strong>Lucia, a bilingual screening agent</strong>
-                            <small>Deterministic code owns the flow and triage; the LLM only phrases. Built for GDPR and EU AI Act constraints.</small>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </section>
-
-        <section class="section" aria-labelledby="projects-title">
-            <div class="container">
-                <p class="kicker">02 · projects &amp; community</p>
-                <h2 class="section-title" id="projects-title">Beyond the day job</h2>
-                <ul class="rows">
-                    <li>
-                        <span class="row-meta">hackathon</span>
-                        <span class="row-body">
-                            <strong><a href="work.html#graph-rag">Graph RAG at the IBM × Datapizza hackathon</a></strong>
-                            <p>Knowledge-graph retrieval over a cross-referenced legal corpus; selected from the top 10% of 600+ applicants. Demo video on the work page.</p>
-                        </span>
-                    </li>
-                    <li>
-                        <span class="row-meta">organizer</span>
-                        <span class="row-body">
-                            <strong><a href="work.html#hackatania">Hackatania I &amp; II</a></strong>
-                            <p>Organizer and technical lead of two GenAI hackathons with the University of Catania.</p>
-                        </span>
-                    </li>
-                    <li>
-                        <span class="row-meta">open source</span>
-                        <span class="row-body">
-                            <strong><a href="work.html#open-source">Contributions to Agentics, soundata, mirdata</a></strong>
-                            <p>Bug fixes, type hints, and docs across an agent framework and two audio libraries.</p>
-                        </span>
-                    </li>
-                    <li>
-                        <span class="row-meta">community</span>
-                        <span class="row-body">
-                            <strong><a href="https://www.skool.com/applied-ai-engineers" target="_blank" rel="noopener noreferrer">Applied AI Engineers ↗</a></strong>
-                            <p>Community manager of an international community for engineers moving into forward-deployed AI roles.</p>
-                        </span>
-                    </li>
-                </ul>
-            </div>
-        </section>
-
-        <section class="section" aria-labelledby="latest-title">
-            <div class="container">
-                <p class="kicker">03 · latest writing</p>
-                <h2 class="section-title" id="latest-title">Conversational AI is a UX problem</h2>
-                <p class="section-intro">Notes from building Lucia, a bilingual screening agent. <a href="https://manuelscionti.substack.com/p/conversational-ai-is-a-ux-problem" target="_blank" rel="noopener noreferrer">Read it on Substack ↗</a> · <a href="writing.html">all writing</a></p>
-            </div>
+        <section class="section" aria-labelledby="latest-essay-title">
+            <h2 class="kicker" id="latest-essay-title">latest essay</h2>
+            <p><a href="https://manuelscionti.substack.com/p/conversational-ai-is-a-ux-problem" target="_blank" rel="noopener noreferrer">Conversational AI is a UX problem ↗</a> — notes from building Lucia.</p>
+            <p class="more"><a href="writing.html">all writing →</a></p>
         </section>
 
     </main>
 
     <footer class="site-footer">
         <div class="container">
-            <div class="footer-inner">
-                <div class="footer-id">
-                    <p class="footer-name">Manuel Scionti</p>
-                    <p class="footer-tag">AI engineer · Barcelona</p>
-                </div>
-                <nav class="footer-links" aria-label="Elsewhere">
-                    <a href="mailto:scionti.manuel@hotmail.it">email</a>
-                    <a href="https://github.com/mnlscn" target="_blank" rel="noopener noreferrer">github</a>
-                    <a href="https://www.linkedin.com/in/manuelscionti/" target="_blank" rel="noopener noreferrer">linkedin</a>
-                    <a href="https://manuelscionti.substack.com/" target="_blank" rel="noopener noreferrer">substack</a>
-                    <a href="assets/manuel-scionti-cv.pdf" download>cv ↓</a>
-                </nav>
-            </div>
-            <p class="footer-fine">
-                <span>© 2026 Manuel Scionti</span>
-                <span class="motto-line">problem finding <strong>&gt;</strong> problem solving</span>
-            </p>
+            <p class="footer-id"><strong>Manuel Scionti</strong> · AI engineer · Barcelona</p>
+            <nav class="links" aria-label="Elsewhere">
+                <a href="mailto:scionti.manuel@hotmail.it">email</a>
+                <a href="https://github.com/mnlscn" target="_blank" rel="noopener noreferrer">github</a>
+                <a href="https://www.linkedin.com/in/manuelscionti/" target="_blank" rel="noopener noreferrer">linkedin</a>
+                <a href="https://manuelscionti.substack.com/" target="_blank" rel="noopener noreferrer">substack</a>
+                <a href="cv.pdf" download="manuel-scionti-cv.pdf">cv ↓</a>
+            </nav>
+            <p class="footer-fine">© 2026 Manuel Scionti · problem finding &gt;&gt;&gt; problem solving</p>
         </div>
     </footer>
 </body>
